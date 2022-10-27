@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.formulario-admin{
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.campo-admin{
+    display: flex;
+    margin-bottom: 2rem; //separacion hacia abajo
+    align-items: center;
+    label{
+        flex: 0 0 10rem; //para que se alinen los label a la misma altura
+        font-size: 25px;
+        font-family: sans-serif;
+        margin-left: 15px;
+    }
+    .fecha-input{
+        flex: 1;
+        border: none;
+        // all: unset; permite sacar todo el borde
+        padding: calc(5rem / 4); //separacion entre 4
+        border-radius: 1rem;
+    }
+}
+
+.nombre-admin{
+    color: black;
+    text-align: center;
+    padding-top: 100px;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.citas{
+    margin-top: 5rem;
+    padding-left: 5em;
+}

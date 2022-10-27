@@ -28,22 +28,15 @@ class Router
 
         // $auth = $_SESSION['login'] ?? null;
 
-        $currentUrl = $_SERVER['REDIRECT_URL'] ?? '/';
-
-        if (isset($_SERVER['PATH_INFO'])) {
-            $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
-        } else {
-            $currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
-        }
-
+        $currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' :  $_SERVER['REQUEST_URI'];
         $method = $_SERVER['REQUEST_METHOD'];
+
 
         if ($method === 'GET') {
             $fn = $this->getRoutes[$currentUrl] ?? null;
         } else {
             $fn = $this->postRoutes[$currentUrl] ?? null;
         }
-
 
         if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
@@ -70,7 +63,7 @@ class Router
     }
 
     // Usuario
-    public function renderUsuario($view, $datos = [])
+    public function renderUsuario($view = [])
     {
 
         ob_start(); // Almacenamiento en memoria durante un momento...

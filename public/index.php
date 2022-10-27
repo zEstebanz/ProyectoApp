@@ -41,12 +41,3 @@ $router->get('/admin', [AdminController::class, 'index']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
-
-if (isset($_GET["token"])) {
-    $token = $_GET["token"];
-    $router->get("/reestablecer?token=$token", [LoginController::class, "reestablecer"]);
-    $router->post("/reestablecer?token=$token", [LoginController::class, "reestablecer"]);
-    }else{
-    $router->get("/reestablecer", [LoginController::class, "reestablecer"]);
-    $router->post("/reestablecer", [LoginController::class, "reestablecer"]);
-  }

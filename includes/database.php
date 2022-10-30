@@ -3,7 +3,7 @@
 $db = mysqli_connect(
     $_ENV['DB_HOST'],
     $_ENV['DB_USER'],
-    $_ENV['DB_PASS'] ?? '', //por si no tiene contraseña
+    $_ENV['DB_PASS'], // ?? por si no tiene contraseña
     $_ENV['DB_BD']
 );
 

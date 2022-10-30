@@ -12,6 +12,7 @@ function s($html) : string {
     $s = htmlspecialchars($html);
     return $s;
 }
+
 function esUltimo(string $actual, string $proximo): bool {
 
     if($actual !== $proximo) {

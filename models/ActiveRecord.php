@@ -52,7 +52,7 @@ class ActiveRecord {
         $objeto = new static;
 
         foreach($registro as $key => $value ) {
-            if(property_exists( $objeto, $key  )) { // creando objeto y lo va liberando en memoria
+            if(property_exists( $objeto, $key  )) {
                 $objeto->$key = $value;
             }
         }
@@ -112,6 +112,7 @@ class ActiveRecord {
     // Busca un registro por su id
     public static function find($id) {
         $query = "SELECT * FROM " . static::$tabla  ." WHERE id = ${id}";
+
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
@@ -124,17 +125,17 @@ class ActiveRecord {
     }
 
     // Busca un registro por su id
-     public static function where($columna, $valor) {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE  ${columna} = '${valor}'";
+    public static function where($columna, $valor) {
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
 
-    // Consulta plana de SQL (Utilizar cuando los métodos del modelo no son suficientes)
-    public static function sql($query) {
+    // Consulta Plana de SQL (Utilizar cuando los métodos del modelo no son suficientes)
+    public static function SQL($query) {
         $resultado = self::consultarSQL($query);
         return $resultado;
-     }
+    }
 
     // crea un nuevo registro
     public function crear() {
@@ -147,7 +148,7 @@ class ActiveRecord {
         $query .= " ) VALUES (' "; 
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
-
+        
         // Resultado de la consulta
         $resultado = self::$db->query($query);
         return [

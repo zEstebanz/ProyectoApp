@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Basica</title>
-    <link rel="stylesheet" href="style.css">
-
     <!-- Boostrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
@@ -20,6 +18,7 @@
     <style>
         main {
             margin: 10px;
+            align-items: center;
             padding: 5px 7px 5px;
         }
 
@@ -341,13 +340,6 @@
             };
         }
 
-        /**
-         * Writes new user input from the calculator buttons onto the
-         * display.
-         * 
-         * @param {String} data The data to display on the screen.
-         * Given by a button click from the user. 
-         */
         writeToDisplay(data) {
             if (document.getElementById("displayBox").value == "Syntax Error") {
                 super.clearDisplay();
@@ -357,12 +349,7 @@
             this.inputList.push(data);
         }
 
-        /**
-         * Writes the operator clicked by the user to the screen.
-         * 
-         * @param {String} operator An string representing the operator 
-         * that has been clicked on by the user. 
-         */
+        
         writeOperatorToDisplay(operator) {
             if (document.getElementById("displayBox").value == "Syntax Error") {
                 super.clearDisplay();
@@ -372,20 +359,7 @@
             this.inputList.push(operator);
         }
 
-        /**
-         * Solves the operation currently displayed by the calculator.
-         * If the syntax is not correct for a well formed arithmetic 
-         * expression, the user will have an error prompted and the display
-         * will be set to zero. Due to the complexity of the regular 
-         * expression checking. This task of matching the whole set of 
-         * possible operations would need a context-free gramar or some other
-         * technique.
-         * 
-         * ~Taken from StackOverflow~
-         * You can't find matching parentheses with regular expressions. 
-         * This is a consequence of the pumping lemma for regular languages.
-         * ~Taken from StackOverflow~
-         */
+        
         solveOperation() {
             let result = 0;
             try {
@@ -400,9 +374,7 @@
             return result;
         }
 
-        /**
-         * Clears the display screen.
-         */
+      
         clearDisplay() {
             super.clearDisplay();
             this.operationString = "";

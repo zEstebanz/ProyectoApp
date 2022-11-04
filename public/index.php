@@ -30,11 +30,9 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 // Area Privada
 $router->get('/usuario', [UsuarioController::class, 'inicioUsuario']);
-$router->get('/estandar', [UsuarioController::class, 'estandar']);
 $router->get('/porcentaje', [UsuarioController::class, 'porcentaje']);
 $router->get('/cientifica', [UsuarioController::class, 'cientifica']);
 $router->get('/basica', [UsuarioController::class, 'basica']);
-$router->get('/binario', [UsuarioController::class, 'binario']);
 
 // Area Administrador
 $router->get('/admin', [AdminController::class, 'index']);

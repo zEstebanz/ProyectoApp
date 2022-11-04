@@ -57,6 +57,10 @@
         margin-left: 20px;
     }
 
+    .app{
+        margin-bottom: 15rem;
+    }
+    
     input[type=number] {
         width: 54px;
         font-size: 18px;

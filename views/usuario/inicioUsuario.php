@@ -78,16 +78,6 @@
 
                     <!-- Empieza un Elemento del carrusel -->
                     <div class="carousel-item">
-                        <a href="/binario" class="subtitulo">
-                            <h2>Binario</h2>
-                        </a>
-                        <div class="linea-division"></div>
-                        <a href="/binario"><img src="build/img/binario.gif" alt=""></a>
-                    </div>
-                    <!-- Termina un Elemento del carrusel -->
-
-                    <!-- Empieza un Elemento del carrusel -->
-                    <div class="carousel-item">
                         <a href="/basica" class="subtitulo">
                             <h2>Basic</h2>
                         </a>

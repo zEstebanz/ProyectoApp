@@ -40,7 +40,7 @@
                         <p>Telefono: <span><?php echo $cita->telefono ?></span></p>
                         <p>Confirmado: <span><?php echo $cita->confirmado ?></span></p>
                         <p>Admin: <span><?php echo $cita->admin ?></span></p>
-                        
+
                     <?php
                     $idCita = $cita->id;
                 } //Fin de IF
@@ -52,6 +52,7 @@
         </ul>
     </div>
 
+   
 </body>
 
 </html>
